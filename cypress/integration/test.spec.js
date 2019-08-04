@@ -1,5 +1,10 @@
-describe('My First Test', () => {
-    it('Does not do much!', () => {
-        expect(true).to.equal(true);
+/// <reference types="Cypress" />
+
+describe('Window Variable', () => {
+    it('Fetch Window Variable', () => {
+        cy.visit('./test.html');
+        cy.window()
+            .its('global')
+            .should('equal', 1000);
     });
 });
